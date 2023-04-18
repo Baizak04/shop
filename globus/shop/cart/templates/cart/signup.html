@@ -1,0 +1,34 @@
+{% extends 'shop/base.html' %}
+{% block content %}
+
+<div class="card bg-light p-1">
+   
+
+    <h4 class=" text-dark">Регистрация</h4>
+
+<form action="{% url 'cart:order' %}" method="post">{% csrf_token %}
+    <br>
+
+    <label for="email">Email</label>
+    <div class="form-group">
+    <input value="" type="email" class="form-control p-0" id="email" name="email" required>
+    </div>
+    <label for=" ">Адрес</label>
+    <div class="form-group">
+    <input value="" type="Адрес" class="from-control p-0" id="pass1" name="address" required>
+    </div>
+    <label for="pass2">Телефон номер</label>
+    <div class="form-group">
+    <input value="" type="Телефон номер" class="form-control p-0" id="pass2" name="phone" required>
+    </div>
+    <label for="pass3">MBANK</label>
+    <div class="from-group">
+    <input value="" type="MBANK" class="from-control p-0" id="MBANK" name="mbank" required>
+    <input value=" {{ product.id }} " type="product" class="from-control p-0" id="product" name="product" required>
+    <input value="{{ product.price }}" type="total_price.id" class="from-control p-0" id="total_price" name="total_price" required>
+    </div>
+    <br>
+    <input value="OK" type="submit" value="Oformit">
+  </p>
+</form>
+{% endblock content %} 
