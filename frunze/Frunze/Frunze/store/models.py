@@ -12,13 +12,10 @@ class Category(models.Model):
         ordering = ('name',)
         verbose_name = 'Категория'
         verbose_name_plural = 'Категории'
-        
       
     def __str__(self):
         return self.name
 
-    def get_absolute_url(self):
-        return reverse('myshop:product_list_by_category', args=[self.slug])
 
 class Product(models.Model):
     category = models.ForeignKey(Category,related_name='products',on_delete=models.CASCADE)
@@ -31,16 +28,17 @@ class Product(models.Model):
     available = models.BooleanField(default=True, verbose_name='Наличие')
     created = models.DateTimeField(auto_now_add=True, verbose_name='Добавлен')
     uploaded = models.DateTimeField(auto_now=True, verbose_name='Изменен')
+    
     class Meta:
         ordering = ('name',)
         verbose_name = 'Товар'
         verbose_name_plural = 'Товары'
         index_together = (('id', 'slug'),)
+        
     def __str__(self):
         return  self.name
 
-    def get_absolute_url(self):
-        return reverse('myshop:product_detail', args=[self.id, self.slug])
+    
     
 
 
