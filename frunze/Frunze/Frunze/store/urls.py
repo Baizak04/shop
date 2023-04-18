@@ -2,6 +2,7 @@ from django.urls import path
 from . import views
 
 app_name = 'store'
+# названия приложения
 
 urlpatterns = [
     path('Category/', views.CategoryListView. as_view(), name='Category_list'),
