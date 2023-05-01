@@ -1,3 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from food_consuming.models import Food, Consume
+from django.http import HttpResponse
 
-# Create your views here.
+
+def say_hello(request):
+    return HttpResponse("Hello food")
