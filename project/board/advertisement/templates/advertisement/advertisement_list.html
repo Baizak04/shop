@@ -1,6 +1,7 @@
 <html>
-<ul>
-    <li>Master</li>
-    <li>Что-то</li>
-</ul>
+    <ul>
+    {% for adverisement in adverisements %}
+        <li>{{ adverisement }}</li>
+    {% endfor %}
+    </ul>
 </html>
