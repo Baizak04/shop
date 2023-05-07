@@ -2,14 +2,13 @@ from typing import Any, Dict
 from django.shortcuts import render
 from django.views import View
 from django.views.generic import TemplateView
+from advertisement .models import Advertisement
 
 def advertisement_list(request, *args, **kwargs):
-    advertisements = [
-        'Master',
-        'что-то'
-    ]
-    return render(request, 'advertisement/advertisement_list.html', {'adverisements':advertisements})
-
+    advertisements = Advertisement.objects.all()
+    return render(request, 'advertisements/advertisements.html', {
+        'advertisements': advertisements
+    })
 
 class About (TemplateView):
     template_name = 'advertisement/about.html'

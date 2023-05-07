@@ -1,0 +1,23 @@
+<html>
+    <h1>Бесплатные объявление</h1>
+
+    {%if advertisement %}
+    <ul>    
+        {% for advertisement in adbertisements %}
+        <li>
+            {{ adbertisements.title }} (Цена: {{advertisement.price}}) сом.
+            <p>
+                Дата создания: {{ advertisement.created_at }}
+            <p>
+            </p>
+                Количество просмотров: {{advertisement.views_count }}
+            </p>
+        </li>
+        {% endfor %}
+
+    </ul>
+    {% else %}
+        <p>объявлений нет.</p>
+    {% endif %}
+
+</html>
