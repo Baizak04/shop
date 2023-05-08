@@ -1,16 +1,16 @@
 <html>
     <h1>Бесплатные объявление</h1>
 
-    {%if advertisement %}
+    {% if advertisement %}
     <ul>    
         {% for advertisement in adbertisements %}
         <li>
-            {{ adbertisements.title }} (Цена: {{advertisement.price}}) сом.
+            {{ adbertisements.title }} (Цена: {{advertisements.price}}) сом.
             <p>
-                Дата создания: {{ advertisement.created_at }}
+                Дата создания: {{ advertisements.created_at }}
             <p>
             </p>
-                Количество просмотров: {{advertisement.views_count }}
+                Количество просмотров: {{ advertisements.views_count }}
             </p>
         </li>
         {% endfor %}

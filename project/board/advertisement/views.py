@@ -6,7 +6,7 @@ from advertisement .models import Advertisement
 
 def advertisement_list(request, *args, **kwargs):
     advertisements = Advertisement.objects.all()
-    return render(request, 'advertisements/advertisements.html', {
+    return render(request, 'advertisement/advertisement.html', {
         'advertisements': advertisements
     })
 
