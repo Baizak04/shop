@@ -3,6 +3,8 @@ from app_library.models import Publisher, Author, Book
 
 class BookInLine(admin.StackedInline):
     model = Book
+    
+
 
 class PublisherAdmin(admin.ModelAdmin):
     list_display = ['id', 'name', 'city']
@@ -14,7 +16,7 @@ class AuthorAdmin(admin.ModelAdmin):
     search_fields = ['first_name', 'last_name', 'biography']
     fieldsets = (
         ('Основные сведения', {
-            'fields': ('first_name', 'second_name', 'last_name', 'country', 'city')
+            'fields': ('first_name', 'second_name', 'last_name', 'city')
         }),
         ('Биографические данные',{
             'fields': ('university', 'birth_date', 'biography'),
@@ -28,7 +30,21 @@ class AuthorAdmin(admin.ModelAdmin):
     )
 
 class BookAdmin(admin.ModelAdmin):
-    pass
+    list_display = ['id', 'title', 'status']
+    actions = ['mark_as_published', 'mark_as_draft', 'mark_as_review']
+    
+    def mark_as_published(self, request, queryset):
+        queryset.update(status='p')
+        
+    def mark_as_draft(self, request, queryset):
+        queryset.update(status='d')
+
+    def mark_as_review(self, request, queryset):
+        queryset.update(status='r')
+        
+    mark_as_published.short_description = 'Перевести в статус Опубликовано'
+    mark_as_draft.short_description = 'Перевести в статус Черновик'
+    mark_as_review.short_description = 'Перевести в статус Ревью'
 
 admin.site.register(Publisher, PublisherAdmin)
 admin.site.register(Author, AuthorAdmin)
