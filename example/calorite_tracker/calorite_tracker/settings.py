@@ -82,6 +82,10 @@ DATABASES = {
     }
 }
 
+AUTH_USER_MODEL = 'food_consuming.User'
+swappable = 'AUTH_USER_MODEL'
+
+
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators

@@ -4,19 +4,19 @@ from food_consuming.api.serializers import UserSerialiser, FoodSerializer, Consu
 from food_consuming.models import Food, Consume
 
 class UserViewSet(viewsets. ModelViewSet):
-    gueryset = User.objects.all().order_by('data_joined emes')
+    queryset = User.objects.all().order_by('date_joined')
     serializer_class = UserSerialiser
     permission_classes = [permissions.IsAuthenticated]
     
 
 class FoodViewSet(viewsets. ModelViewSet):
-    gueryset = Food.objects.all()
+    queryset = Food.objects.all()
     serializer_class = FoodSerializer
     permission_classes = [permissions.IsAuthenticated]
     
 
 
 class ConsumeViewSet(viewsets. ModelViewSet):
-    gueryset = Consume.objects.all()
+    queryset = Consume.objects.all()
     serializer_class = ConsumeSerializer
     permission_classes = [permissions.IsAuthenticated]
