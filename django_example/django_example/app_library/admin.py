@@ -49,3 +49,32 @@ class BookAdmin(admin.ModelAdmin):
 admin.site.register(Publisher, PublisherAdmin)
 admin.site.register(Author, AuthorAdmin)
 admin.site.register(Book, BookAdmin)
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
