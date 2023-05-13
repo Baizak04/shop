@@ -10,5 +10,9 @@ def about(request):
     return render(request, 'main/about.html')
 
 def index_two(request):
-    return render(request, 'main/index_two.html')
+    data = {
+        'title': 'Главная страница',
+        'values': ['']
+    }
+    return render(request, 'main/index_two.html', data)
 
