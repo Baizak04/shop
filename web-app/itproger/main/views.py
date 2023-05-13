@@ -7,5 +7,8 @@ def index(request):
 
 
 def about(request):
-    return HttpResponse("<h3>Страница про нас<h/3>")
+    return render(request, 'main/about.html')
+
+def index_two(request):
+    return render(request, 'main/index_two.html')
 
