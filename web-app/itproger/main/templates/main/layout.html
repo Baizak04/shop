@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,9 +6,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'main/css/main.css' %}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css1">
 </head>
 <body>
-    {% block content %}
-    {% endblock %}
+    <aside>
+        <img src="{% static 'main/img/logog.svg' %}" alt="Лого">
+        <span class="logo">itspase_kg</span>
+        <h3>Навигация</h3>
+        <ul>
+           <a href="{% url 'index_two' %}"><li><i class="fas fa-home"></i>Главная</li></a>
+           <a href="{% url 'about' %}"><li><i class="fa-sharp fa-solid fa-address-card"></i>Про нас</li></a>
+           <a href=""><li><i class="fa-solid fa-address-book"></i>Контакты</li></a>
+        </ul>
+    </aside>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
 </body>
 </html>
