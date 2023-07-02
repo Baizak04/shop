@@ -7,3 +7,6 @@ def index(request):
 
 def erjan(request):
     return HttpResponse("Салам Эржан.")
+
+def salam_python(request):
+    return HttpResponse("Салам Python")
